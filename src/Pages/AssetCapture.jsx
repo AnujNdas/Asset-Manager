@@ -34,7 +34,8 @@ const AssetCapture = () => {
   // Save asset to database
   const saveAssetToDatabase = async (data) => {
     try {
-      const response = await fetch('http://localhost:5000/api/assets/', {
+      const apiurl = process.env.NEXT_PUBLIC_API_URL;
+      const response = await fetch(`${apiurl}/api/assets`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
